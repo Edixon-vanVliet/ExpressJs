@@ -17,3 +17,13 @@ exports.showLeads = function (req, res, next) {
         res.render("landing", { title: "Express", leads: leads });
     });
 };
+
+exports.showLead = function (req, res, next) {
+    models.Lead.findOne({
+        where: {
+            id: req.params.idLead,
+        },
+    }).then((lead) => {
+        res.render("lead", { lead: lead });
+    });
+};
