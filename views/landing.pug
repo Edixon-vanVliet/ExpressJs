@@ -7,6 +7,8 @@ block content
     input(name="leadEmail", type="email", placeholder="Enter your email address")
     button(type="submit") Submit
   if leads
-    hi Leads
+    h1 Leads
     for lead in leads
-      p #{lead.email}
+      p
+        span #{lead.email} 
+        a(href="/lead/" + lead.id) Details
