@@ -10,5 +10,6 @@ router.get("/leads", landing.showLeads);
 router.get("/lead/:idLead", landing.showLead);
 router.get("/lead/:idLead/edit", landing.showEditLead);
 router.post("/lead/:idLead/edit", landing.editLead);
+router.post("/lead/:idLead/delete", landing.deleteLead);
 
 module.exports = router;

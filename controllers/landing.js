@@ -52,3 +52,13 @@ exports.editLead = function (req, res, next) {
         res.redirect("/lead/" + req.params.idLead);
     });
 };
+
+exports.deleteLead = function (req, res, next) {
+    return models.Lead.destroy({
+        where: {
+            id: req.params.idLead,
+        },
+    }).then((result) => {
+        res.redirect("/leads");
+    });
+};
