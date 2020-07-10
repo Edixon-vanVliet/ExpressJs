@@ -4,6 +4,8 @@ var router = express.Router();
 const landing = require("../controllers/landing");
 const user = require("../controllers/user");
 
+let { isLoggedIn, hasAuth } = require("../middleware/hasAuth");
+
 router.get("/login", user.showLogin);
 router.get("/signup", user.showSignup);
 router.post("/login", user.login);
@@ -14,11 +16,11 @@ router.get("/logout", user.logout);
 /* GET home page. */
 router.get("/", landing.getLanding);
 router.post("/", landing.submitLead);
-router.get("/leads", landing.showLeads);
-router.get("/lead/:idLead", landing.showLead);
-router.get("/lead/:idLead/edit", landing.showEditLead);
-router.post("/lead/:idLead/edit", landing.editLead);
-router.post("/lead/:idLead/delete", landing.deleteLead);
-router.post("/lead/:idLead/delete-json", landing.deleteLeadJson);
+router.get("/leads", hasAuth, landing.showLeads);
+router.get("/lead/:idLead", hasAuth, landing.showLead);
+router.get("/lead/:idLead/edit", hasAuth, landing.showEditLead);
+router.post("/lead/:idLead/edit", hasAuth, landing.editLead);
+router.post("/lead/:idLead/delete", hasAuth, landing.deleteLead);
+router.post("/lead/:idLead/delete-json", hasAuth, landing.deleteLeadJson);
 
 module.exports = router;
