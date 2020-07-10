@@ -6,6 +6,10 @@ const user = require("../controllers/user");
 
 router.get("/login", user.showLogin);
 router.get("/signup", user.showSignup);
+router.post("/login", user.login);
+router.post("/signup", user.signup);
+router.post("/logout", user.logout);
+router.get("/logout", user.logout);
 
 /* GET home page. */
 router.get("/", landing.getLanding);
