@@ -10,7 +10,7 @@ html(lang="en")
                 .row.align-items-center
                     .col-md-6.order-md-1.text-center.text-md-left.pr-md-5
                         h1 Edit Lead
-                        form(action="/lead/" + lead.id + ".edit", method="POST")
+                        form(action="/lead/" + lead.id + "/edit", method="POST")
                             .input-group.mb-3
                                 input(name="leadEmail", tpye="email", placeholder="Enter your email address", value=lead.email).form-control
                                 .input-group-append
