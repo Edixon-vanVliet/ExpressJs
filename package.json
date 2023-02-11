@@ -23,7 +23,7 @@
         "validator": "^13.7.0"
     },
     "devDependencies": {
-        "nodemon": "^2.0.4",
+        "nodemon": "^2.0.20",
         "sequelize-cli": "^6.1.0"
     }
 }
